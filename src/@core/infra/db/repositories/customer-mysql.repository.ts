@@ -1,6 +1,6 @@
 import { EntityManager } from '@mikro-orm/mysql';
-import { ICustomerRepository } from '../../../domain/repositories/customer-repository.interface';
 import { Customer, CustomerId } from 'src/@core/events/domain/entities/customer.entity';
+import { ICustomerRepository } from 'src/@core/events/domain/repositories/customer-repository.interface';
 
 export class CustomerMysqlRepository implements ICustomerRepository {
   constructor(private entityManager: EntityManager) {}

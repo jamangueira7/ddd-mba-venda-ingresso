@@ -1,6 +1,6 @@
 import { EntityManager } from '@mikro-orm/mysql';
-import { Order, OrderId } from '../../../domain/entities/order.entity';
-import { IOrderRepository } from '../../../domain/repositories/order-repository.interface';
+import { Order, OrderId } from 'src/@core/events/domain/entities/order.entity';
+import { IOrderRepository } from 'src/@core/events/domain/repositories/order-repository.interface';
 
 export class OrderMysqlRepository implements IOrderRepository {
   constructor(private entityManager: EntityManager) {}
