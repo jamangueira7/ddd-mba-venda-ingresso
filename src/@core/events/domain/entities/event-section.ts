@@ -3,7 +3,7 @@ import {
   AnyCollection,
   ICollection,
   MyCollectionFactory,
-} from '../../../common/domain/my-collection';
+} from 'src/@core/common/domain/my-collection'
 import Uuid from '../../../common/domain/value-objects/uuid.vo';
 import { EventSpot, EventSpotId } from './event-spot';
 
