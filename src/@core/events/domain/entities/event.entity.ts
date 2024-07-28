@@ -199,7 +199,7 @@ export class Event extends AggregateRoot {
     )
   }
 
-  allowReserveSpot(data: { section_id: EventSectionId spot_id: EventSpotId }) {
+  allowReserveSpot(data: { section_id: EventSectionId, spot_id: EventSpotId }) {
     if (!this.is_published) {
       return false
     }

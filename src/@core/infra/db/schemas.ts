@@ -15,6 +15,7 @@ import { Order, OrderStatus } from 'src/@core/events/domain/entities/order.entit
 import { OrderIdSchemaType } from './types/order-id.schema-type';
 import { Partner } from 'src/@core/events/domain/entities/partner.entity';
 
+
 export const PartnerSchema = new EntitySchema<Partner>({
   class: Partner,
   properties: {

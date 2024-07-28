@@ -1,4 +1,5 @@
-import { IDomainEvent } from '../../../../common/domain/domain-event';
+
+import { IDomainEvent } from 'src/@core/common/domain/domain-event';
 import { CustomerId } from '../../entities/customer.entity';
 
 export class CustomerChangedName implements IDomainEvent {
