@@ -5,7 +5,6 @@ import {
   EventSpotSchema,
   PartnerSchema,
 } from '../../schemas';
-import { Event } from 'src/@core/events/domain/entities/event.entity';
 import { EventMysqlRepository } from '../event-mysql.repository';
 import { Partner } from 'src/@core/events/domain/entities/partner.entity';
 import { PartnerMysqlRepository } from '../partner-mysql.repository';
