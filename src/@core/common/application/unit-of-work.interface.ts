@@ -1,4 +1,4 @@
-import { AggregateRoot } from '../domain/aggregate-root';
+import {AggregateRoot} from "../domain/aggregate-root";
 
 export interface IUnitOfWork {
   beginTransaction(): Promise<void>;

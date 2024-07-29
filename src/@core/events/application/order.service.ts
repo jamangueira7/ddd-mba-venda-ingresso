@@ -83,10 +83,11 @@ export class OrderService {
           spot_id: spotId,
         })
 
-        this.eventRepo.add(event)
+        await this.eventRepo.add(event)
 
         await this.uow.commit()
         return order
+
       } catch (e) {
         const section = event.sections.find((s) => s.id.equals(sectionId))
         const order = Order.create({
@@ -95,9 +96,9 @@ export class OrderService {
           amount: section.price,
         })
         order.cancel()
-        this.orderRepo.add(order)
+        await this.orderRepo.add(order)
         await this.uow.commit()
-        throw new Error('Aconteceu um erro reservar o seu lugar')
+        throw new Error('Aconteceu um erro ao reservar o seu lugar')
       }
     })
   }

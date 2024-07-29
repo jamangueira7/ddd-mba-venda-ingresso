@@ -1,4 +1,4 @@
-import {Entity} from "@mikro-orm/core";
+import { Entity } from '../../../common/domain/entity';
 import Uuid from "../../../common/domain/value-objects/uuid.vo";
 
 export class EventSpotId extends Uuid {}

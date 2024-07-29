@@ -3,8 +3,8 @@ import { IUnitOfWork } from './unit-of-work.interface';
 
 export class ApplicationService {
   constructor(
-    private uow: IUnitOfWork,
-    private domainEventManager: DomainEventManager,
+      private uow: IUnitOfWork,
+      private domainEventManager: DomainEventManager,
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function

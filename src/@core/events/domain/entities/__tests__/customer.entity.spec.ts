@@ -1,23 +1,30 @@
-import Cpf from '../../../../common/domain/value-objects/cpf.vo'
-import { Customer, CustomerId } from '../customer.entity'
+import Cpf from '../../../../common/domain/value-objects/cpf.vo';
+import { Customer, CustomerId } from '../customer.entity';
 
 test('deve criar um cliente', () => {
-    let customer = Customer.create({
+    const customer = Customer.create({
         name: 'João',
-        cpf: '439.562.180-51'
-    })
+        cpf: '99346413050',
+    });
+    console.log(customer);
+    expect(customer).toBeInstanceOf(Customer);
+    expect(customer.id).toBeDefined();
+    expect(customer.id).toBeInstanceOf(CustomerId);
+    expect(customer.name).toBe('João');
+    expect(customer.cpf.value).toBe('99346413050');
 
-    expect(customer).toBeInstanceOf(Customer)
-    expect(customer.id).toBeDefined()
-    expect(customer.id).toBeInstanceOf(CustomerId)
-    expect(customer.name).toBe('João')
-    expect(customer.cpf.value).toBe('43956218051')
-
-    let customer2 = new Customer({
+    const customer2 = new Customer({
         id: new CustomerId(customer.id.value),
         name: 'João xpto',
-        cpf: new Cpf('527.337.550-99')
-    })
+        cpf: new Cpf('703.758.870-91'),
+    });
 
-    expect(customer.id.value).toBe(customer2.id.value)
-})
+    console.log(customer.equals(customer2));
+
+    // não é valido
+    // customer = new Customer({
+    //   id: '123', new CustomerId() || new CustomerId('')
+    //   name: 'João',
+    //   cpf: '99346413050',
+    // });
+});

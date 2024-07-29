@@ -38,7 +38,7 @@ test('partner repository', async () => {
 
   console.log(await partnerRepo.findAll());
 
-  partnerRepo.delete(partner);
+  await partnerRepo.delete(partner);
   await em.flush();
 
   console.log(await partnerRepo.findAll());

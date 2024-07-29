@@ -1,5 +1,5 @@
 import {OrderId} from "../../../domain/entities/order.entity";
-import {Platform, Type} from "@mikro-orm/core";
+import {EntityProperty, Platform, Type} from "@mikro-orm/core";
 
 export class OrderIdSchemaType extends Type<OrderId, string> {
   convertToDatabaseValue(

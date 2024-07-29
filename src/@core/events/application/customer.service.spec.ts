@@ -30,7 +30,10 @@ test('deve listar os customers', async () => {
   await em.clear();
 
   const customers = await customerService.list();
-  console.log(customers);
+  expect(customers[0]).toBeInstanceOf(Customer);
+  expect(customers[0].id).toBeDefined();
+  expect(customers[0].name).toBe('Customer 1');
+  expect(customers[0].cpf.value).toBe('70375887091');
   await orm.close();
 });
 

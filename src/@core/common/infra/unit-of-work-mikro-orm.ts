@@ -1,6 +1,6 @@
-import { EntityManager } from '@mikro-orm/mysql';
-import { IUnitOfWork } from '../application/unit-of-work.interface';
-import { AggregateRoot } from '../domain/aggregate-root';
+import {IUnitOfWork} from "../application/unit-of-work.interface";
+import {EntityManager} from "@mikro-orm/mysql";
+import {AggregateRoot} from "../domain/aggregate-root";
 
 export class UnitOfWorkMikroOrm implements IUnitOfWork {
   constructor(private em: EntityManager) {}

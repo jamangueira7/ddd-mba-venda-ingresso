@@ -1,21 +1,21 @@
 export abstract class Entity {
-    readonly id:any
+    readonly id: any;
 
-    abstract toJSON(): any
+    abstract toJSON(): any;
 
     equals(obj: this) {
         if (obj === null || obj === undefined) {
-          return false
+            return false;
         }
-    
+
         if (obj.id === undefined) {
-          return false
+            return false;
         }
-    
+
         if (obj.constructor.name !== this.constructor.name) {
-          return false
+            return false;
         }
-    
-        return obj.id.equals(this.id)
-      }
+
+        return obj.id.equals(this.id);
+    }
 }

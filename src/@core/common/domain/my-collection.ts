@@ -29,9 +29,10 @@ export class MyCollectionFactory {
   }
 
   private static createProxy<T extends object>(
-    target: Collection<T>,
+      target: Collection<T>,
   ): ICollection<T> {
-    //@ts-expect-error - Proxy
+
+    // @ts-expect-error - Proxy
     return new Proxy(target, {
       get(target, prop, receiver) {
         if (prop === 'find') {
