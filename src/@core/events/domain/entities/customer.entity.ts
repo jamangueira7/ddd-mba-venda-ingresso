@@ -1,7 +1,6 @@
-
-import { AggregateRoot } from '../../../common/domain/aggregate-root';
-import Cpf from '../../../common/domain/value-objects/cpf.vo';
-import Uuid from '../../../common/domain/value-objects/uuid.vo';
+import Uuid from "../../../common/domain/value-objects/uuid.vo";
+import Cpf from "../../../common/domain/value-objects/cpf.vo";
+import {AggregateRoot} from "../../../common/domain/aggregate-root";
 
 export class CustomerId extends Uuid {}
 
@@ -38,5 +37,9 @@ export class Customer extends AggregateRoot {
             cpf: this.cpf,
             name: this.name
         }
+    }
+
+    changeName(customer2: string) {
+        
     }
 }

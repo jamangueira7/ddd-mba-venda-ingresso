@@ -1,5 +1,5 @@
-import { Type, Platform, EntityProperty } from '@mikro-orm/core';
-import { EventSpotId } from 'src/@core/events/domain/entities/event-spot';
+import {EventSpotId} from "../../../domain/entities/event-spot";
+import {Platform, Type} from "@mikro-orm/core";
 
 export class EventSpotIdSchemaType extends Type<EventSpotId, string> {
   convertToDatabaseValue(
@@ -8,15 +8,15 @@ export class EventSpotIdSchemaType extends Type<EventSpotId, string> {
   ): string {
     return valueObject instanceof EventSpotId
       ? valueObject.value
-      : (valueObject as string);
+      : (valueObject as string)
   }
 
   //não funciona para relacionamentos
   convertToJSValue(value: string, platform: Platform): EventSpotId {
-    return new EventSpotId(value);
+    return new EventSpotId(value)
   }
 
   getColumnType(prop: EntityProperty, platform: Platform) {
-    return `varchar(36)`;
+    return `varchar(36)`
   }
 }

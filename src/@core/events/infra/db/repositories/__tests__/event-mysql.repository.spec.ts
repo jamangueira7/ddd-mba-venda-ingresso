@@ -1,13 +1,8 @@
-import { MikroORM, MySqlDriver } from '@mikro-orm/mysql';
-import {
-  EventSchema,
-  EventSectionSchema,
-  EventSpotSchema,
-  PartnerSchema,
-} from '../../schemas';
-import { EventMysqlRepository } from '../event-mysql.repository';
-import { Partner } from 'src/@core/events/domain/entities/partner.entity';
-import { PartnerMysqlRepository } from '../partner-mysql.repository';
+import {MikroORM, MySqlDriver} from "@mikro-orm/mysql";
+import {EventSchema, EventSectionSchema, EventSpotSchema, PartnerSchema} from "../../schemas";
+import {PartnerMysqlRepository} from "../partner-mysql.repository";
+import {EventMysqlRepository} from "../event-mysql.repository";
+import {Partner} from "../../../../domain/entities/partner.entity";
 
 test('Event repository', async () => {
   const orm = await MikroORM.init<MySqlDriver>({
@@ -17,9 +12,7 @@ test('Event repository', async () => {
     port: 3306,
     user: 'root',
     password: 'root',
-    type: 'mysql',
-    forceEntityConstructor: true,
-    debug: true,
+    forceEntityConstructor: true
   });
   await orm.schema.refreshDatabase();
   const em = orm.em.fork();

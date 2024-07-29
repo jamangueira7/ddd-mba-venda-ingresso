@@ -1,5 +1,5 @@
-import { Type, Platform, EntityProperty } from '@mikro-orm/core';
-import { EventSectionId } from 'src/@core/events/domain/entities/event-section';
+import {EntityProperty, Platform, Type} from "@mikro-orm/core";
+import {EventSectionId} from "../../../domain/entities/event-section";
 
 export class EventSectionIdSchemaType extends Type<EventSectionId, string> {
   convertToDatabaseValue(

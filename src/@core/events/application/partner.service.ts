@@ -1,6 +1,6 @@
-import { ApplicationService } from '../../common/application/application.service';
-import { Partner } from '../domain/entities/partner.entity';
-import { IPartnerRepository } from '../domain/repositories/partner.repository.interface';
+import {IPartnerRepository} from "../domain/repositories/partner.repository.interface";
+import {ApplicationService} from "../../common/application/application.service";
+import {Partner} from "../domain/entities/partner.entity";
 
 export class PartnerService {
   constructor(

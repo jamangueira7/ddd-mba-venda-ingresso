@@ -1,6 +1,5 @@
-import { Type, Platform, EntityProperty } from '@mikro-orm/core';
-import { PartnerId } from 'src/@core/events/domain/entities/partner.entity';
-
+import {PartnerId} from "../../../domain/entities/partner.entity";
+import {Platform, Type} from "@mikro-orm/core";
 
 export class PartnerIdSchemaType extends Type<PartnerId, string> {
   convertToDatabaseValue(
@@ -9,15 +8,15 @@ export class PartnerIdSchemaType extends Type<PartnerId, string> {
   ): string {
     return valueObject instanceof PartnerId
       ? valueObject.value
-      : (valueObject as string);
+      : (valueObject as string)
   }
 
   //não funciona para relacionamentos
   convertToJSValue(value: string, platform: Platform): PartnerId {
-    return new PartnerId(value);
+    return new PartnerId(value)
   }
 
   getColumnType(prop: EntityProperty, platform: Platform) {
-    return 'varchar(36)';
+    return 'varchar(36)'
   }
 }

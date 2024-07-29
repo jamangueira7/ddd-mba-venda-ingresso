@@ -1,10 +1,10 @@
-import { AggregateRoot } from '../../../common/domain/aggregate-root';
-import Uuid from '../../../common/domain/value-objects/uuid.vo';
-import { OrderCancelled } from '../events/domain-events/order-cancelled.event';
-import { OrderCreated } from '../events/domain-events/order-created.event';
-import { OrderPaid } from '../events/domain-events/order-paid.event';
-import { CustomerId } from './customer.entity';
-import { EventSpotId } from './event-spot';
+import Uuid from "../../../common/domain/value-objects/uuid.vo";
+import {CustomerId} from "./customer.entity";
+import {EventSpotId} from "./event-spot";
+import {AggregateRoot} from "../../../common/domain/aggregate-root";
+import {OrderCreated} from "../events/domain-events/order-created.event";
+import {OrderPaid} from "../events/domain-events/order-paid.event";
+import {OrderCancelled} from "../events/domain-events/order-cancelled.event";
 
 export enum OrderStatus {
   PENDING,

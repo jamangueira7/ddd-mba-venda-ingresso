@@ -1,25 +1,20 @@
-import { AggregateRoot } from '../../../common/domain/aggregate-root'
-import { PartnerId } from './partner.entity'
-import Uuid from '../../../common/domain/value-objects/uuid.vo'
-
-import {
-  AnyCollection,
-  ICollection,
-  MyCollectionFactory,
-}  from 'src/@core/common/domain/my-collection'
-import { EventChangedName } from '../events/domain-events/event-changed-name.event'
-import { EventChangedDescription } from '../events/domain-events/event-changed-description.event'
-import { EventChangedDate } from '../events/domain-events/event-changed-date.event'
-import { EventPublishAll } from '../events/domain-events/event-publish-all.event'
-import { EventPublish } from '../events/domain-events/event-publish.event'
-import { EventUnpublish } from '../events/domain-events/event-unpublish.event'
-import { EventAddedSection } from '../events/domain-events/event-added-section.event'
-import { EventChangedSectionSection } from '../events/domain-events/event-changed-section-information.event'
-import { EventChangedSpotLocation } from '../events/domain-events/event-changed-spot-location.event'
-import { EventMarkedSportAsReserved } from '../events/domain-events/event-marked-sport-as-reserved.event'
-import { EventCreated } from '../events/domain-events/event-created.event'
-import { EventSpotId } from './event-spot'
-import { EventSection, EventSectionId } from './event-section'
+import Uuid from "../../../common/domain/value-objects/uuid.vo";
+import {PartnerId} from "./partner.entity";
+import {AggregateRoot} from "../../../common/domain/aggregate-root";
+import {AnyCollection, ICollection, MyCollectionFactory} from "../../../common/domain/my-collection";
+import {EventSection, EventSectionId} from "./event-section";
+import {EventCreated} from "../events/domain-events/event-created.event";
+import {EventChangedName} from "../events/domain-events/event-changed-name.event";
+import {EventChangedDescription} from "../events/domain-events/event-changed-description.event";
+import {EventChangedDate} from "../events/domain-events/event-changed-date.event";
+import {EventPublishAll} from "../events/domain-events/event-publish-all.event";
+import {EventPublish} from "../events/domain-events/event-publish.event";
+import {EventUnpublish} from "../events/domain-events/event-unpublish.event";
+import {EventAddedSection} from "../events/domain-events/event-added-section.event";
+import {EventChangedSectionSection} from "../events/domain-events/event-changed-section-information.event";
+import {EventSpotId} from "./event-spot";
+import {EventChangedSpotLocation} from "../events/domain-events/event-changed-spot-location.event";
+import {EventMarkedSportAsReserved} from "../events/domain-events/event-marked-sport-as-reserved.event";
 
 export class EventId extends Uuid {}
 

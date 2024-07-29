@@ -1,13 +1,11 @@
-import { MikroORM } from '@mikro-orm/core'
+import {MikroORM} from "@mikro-orm/mysql";
 import {
-  CustomerSchema,
-  EventSchema,
-  EventSectionSchema,
-  EventSpotSchema,
-  OrderSchema,
-  PartnerSchema,
-  SpotReservationSchema,
-} from 'src/@core/infra/db/schemas'
+    CustomerSchema,
+    EventSchema,
+    EventSectionSchema,
+    EventSpotSchema, OrderSchema,
+    PartnerSchema, SpotReservationSchema
+} from "../../../infra/db/schemas";
 
 export function initOrm() {
   beforeAll(async () => {

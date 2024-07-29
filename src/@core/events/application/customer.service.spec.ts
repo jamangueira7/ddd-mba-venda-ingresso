@@ -1,9 +1,9 @@
-import { MikroORM, MySqlDriver } from '@mikro-orm/mysql'
-import { Customer } from '../domain/entities/customer.entity'
-import { CustomerService } from './customer.service'
-import { UnitOfWorkMikroOrm } from '../../common/infra/unit-of-work-mikro-orm'
-import { CustomerSchema } from 'src/@core/infra/db/schemas'
-import { CustomerMysqlRepository } from 'src/@core/infra/db/repositories/customer-mysql.repository'
+import { MikroORM, MySqlDriver } from '@mikro-orm/mysql';
+import { Customer } from '../domain/entities/customer.entity';
+import { CustomerService } from './customer.service';
+import { UnitOfWorkMikroOrm } from '../../common/infra/unit-of-work-mikro-orm';
+import {CustomerSchema} from "../infra/db/schemas";
+import {CustomerMysqlRepository} from "../infra/db/repositories/customer-mysql.repository";
 
 test('deve listar os customers', async () => {
   const orm = await MikroORM.init<MySqlDriver>({
@@ -15,24 +15,24 @@ test('deve listar os customers', async () => {
     password: 'root',
     type: 'mysql',
     forceEntityConstructor: true,
-  })
-  await orm.schema.refreshDatabase()
-  const em = orm.em.fork()
-  const unitOfWork = new UnitOfWorkMikroOrm(em)
-  const customerRepo = new CustomerMysqlRepository(em)
-  const customerService = new CustomerService(customerRepo, unitOfWork)
+  });
+  await orm.schema.refreshDatabase();
+  const em = orm.em.fork();
+  const unitOfWork = new UnitOfWorkMikroOrm(em);
+  const customerRepo = new CustomerMysqlRepository(em);
+  const customerService = new CustomerService(customerRepo, unitOfWork);
   const customer = Customer.create({
     name: 'Customer 1',
     cpf: '70375887091',
-  })
-  await customerRepo.add(customer)
-  await em.flush()
-  await em.clear()
+  });
+  await customerRepo.add(customer);
+  await em.flush();
+  await em.clear();
 
-  const customers = await customerService.list()
-  console.log(customers)
-  await orm.close()
-})
+  const customers = await customerService.list();
+  console.log(customers);
+  await orm.close();
+});
 
 test('deve registrar um customer', async () => {
   const orm = await MikroORM.init<MySqlDriver>({
@@ -44,30 +44,30 @@ test('deve registrar um customer', async () => {
     password: 'root',
     type: 'mysql',
     forceEntityConstructor: true,
-  })
-  await orm.schema.refreshDatabase()
-  const em = orm.em.fork()
-  const unitOfWork = new UnitOfWorkMikroOrm(em)
-  const customerRepo = new CustomerMysqlRepository(em)
-  const customerService = new CustomerService(customerRepo, unitOfWork)
+  });
+  await orm.schema.refreshDatabase();
+  const em = orm.em.fork();
+  const unitOfWork = new UnitOfWorkMikroOrm(em);
+  const customerRepo = new CustomerMysqlRepository(em);
+  const customerService = new CustomerService(customerRepo, unitOfWork);
 
   const customer = await customerService.register({
     name: 'Customer 1',
     cpf: '70375887091',
-  })
+  });
 
-  expect(customer).toBeInstanceOf(Customer)
-  expect(customer.id).toBeDefined()
-  expect(customer.name).toBe('Customer 1')
-  expect(customer.cpf.value).toBe('70375887091')
+  expect(customer).toBeInstanceOf(Customer);
+  expect(customer.id).toBeDefined();
+  expect(customer.name).toBe('Customer 1');
+  expect(customer.cpf.value).toBe('70375887091');
 
-  await em.clear()
+  await em.clear();
 
-  const customerFound = await customerRepo.findById(customer.id)
-  expect(customerFound).toBeInstanceOf(Customer)
-  expect(customerFound.id).toBeDefined()
-  expect(customerFound.name).toBe('Customer 1')
-  expect(customerFound.cpf.value).toBe('70375887091')
+  const customerFound = await customerRepo.findById(customer.id);
+  expect(customerFound).toBeInstanceOf(Customer);
+  expect(customerFound.id).toBeDefined();
+  expect(customerFound.name).toBe('Customer 1');
+  expect(customerFound.cpf.value).toBe('70375887091');
 
-  await orm.close()
-})
+  await orm.close();
+});

@@ -1,6 +1,6 @@
-import { IUnitOfWork } from '../../common/application/unit-of-work.interface';
-import { Customer } from '../domain/entities/customer.entity';
-import { ICustomerRepository } from '../domain/repositories/customer-repository.interface';
+import {ICustomerRepository} from "../domain/repositories/customer-repository.interface";
+import {Customer} from "../domain/entities/customer.entity";
+import {IUnitOfWork} from "../../common/application/unit-of-work.interface";
 
 export class CustomerService {
   constructor(

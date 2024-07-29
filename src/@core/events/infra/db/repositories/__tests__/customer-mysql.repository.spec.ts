@@ -1,6 +1,6 @@
 import { MikroORM, MySqlDriver } from '@mikro-orm/mysql';
 import { CustomerSchema } from '../../schemas';
-import { Customer } from 'src/@core/events/domain/entities/customer.entity';
+import { Customer } from '../../../../domain/entities/customer.entity';
 import { CustomerMysqlRepository } from '../customer-mysql.repository';
 
 test('Customer repository', async () => {

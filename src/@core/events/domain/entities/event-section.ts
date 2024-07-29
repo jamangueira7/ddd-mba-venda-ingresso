@@ -1,11 +1,7 @@
-import { Entity } from '../../../common/domain/entity';
-import {
-  AnyCollection,
-  ICollection,
-  MyCollectionFactory,
-} from 'src/@core/common/domain/my-collection'
-import Uuid from '../../../common/domain/value-objects/uuid.vo';
-import { EventSpot, EventSpotId } from './event-spot';
+import Uuid from "../../../common/domain/value-objects/uuid.vo";
+import {Entity} from "@mikro-orm/core";
+import {EventSpot, EventSpotId} from "./event-spot";
+import {AnyCollection, ICollection, MyCollectionFactory} from "../../../common/domain/my-collection";
 
 export class EventSectionId extends Uuid {}
 
