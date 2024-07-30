@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
   "exclude": ["node_modules",
-    "apps/mba-ddd-venda-ingresso/test", "dist", "**/*spec.ts"]
+    "test", "dist", "**/*spec.ts"]
 }
