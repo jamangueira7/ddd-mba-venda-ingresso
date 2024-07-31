@@ -13,7 +13,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/mba-ddd-venda-ingresso/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --detectOpenHandles",
     "test:watch": "jest --watch --runInBand",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -33,7 +33,9 @@
     "bull": "^4.10.4",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eventemitter2": "^6.4.9",
+    "prettier": "^2.8.8",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "uuid": "^9.0.0"
@@ -53,10 +55,8 @@
     "@typescript-eslint/parser": "^5.59.11",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "jest": "^29.6.1",
-    "prettier": "^2.8.8",
     "source-map-support": "^0.5.21",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
@@ -71,7 +71,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s?$": [

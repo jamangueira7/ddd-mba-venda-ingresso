@@ -1,7 +1,7 @@
-import Uuid from "../../../common/domain/value-objects/uuid.vo";
 import {AggregateRoot} from "../../../common/domain/aggregate-root";
-import {PartnerCreated} from "../events/domain-events/partner-created.event";
+import Uuid from "../../../common/domain/value-objects/uuid.vo";
 import {PartnerChangedName} from "../events/domain-events/artner-changed-name.event";
+import {PartnerCreated} from "../events/domain-events/partner-created.event";
 import {Event} from "./event.entity";
 
 export class PartnerId extends Uuid {}
