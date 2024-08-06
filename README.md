@@ -22,6 +22,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [x] - DDD - Domain Driven Design.
 - [x] - Use o arquivo `api.http` para executar as requisições HTTP. 
 
+Projeto do professor [aqui](https://github.com/devfullcycle/mba-domain-driven-design/blob/main/README.md)
+@argentinaluiz
+
 ### Testes
 
 ![image.png](.github%2Fimage.png)
