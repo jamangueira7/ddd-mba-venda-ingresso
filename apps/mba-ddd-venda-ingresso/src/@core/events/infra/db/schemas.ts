@@ -12,6 +12,7 @@ import {EventSpotIdSchemaType} from "./types/event-spot-id.schema-type";
 import {SpotReservation} from "../../domain/entities/spot-reservation.entity";
 import {Order, OrderStatus} from "../../domain/entities/order.entity";
 import {OrderIdSchemaType} from "./types/order-id.schema-type";
+import { Event } from "../../domain/entities/event.entity";
 
 export const PartnerSchema = new EntitySchema<Partner>({
   class: Partner,
